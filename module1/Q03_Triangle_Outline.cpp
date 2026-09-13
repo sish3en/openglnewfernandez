@@ -1,0 +1,22 @@
+#include <GL/glut.h>
+
+void display() {
+    glClear(GL_COLOR_BUFFER_BIT);
+    glColor3f(0.0f, 0.0f, 1.0f);
+    glLineWidth(3.0f);
+    glBegin(GL_LINE_LOOP);
+        glVertex2f(0.0f, 0.6f);
+        glVertex2f(-0.6f, -0.4f);
+        glVertex2f(0.6f, -0.4f);
+    glEnd();
+    glFlush();
+}
+
+int main(int argc, char** argv) {
+    glutInit(&argc, argv);
+    glutInitWindowSize(600, 600);
+    glutCreateWindow("Q03 - Triangle Outline");
+    glutDisplayFunc(display);
+    glutMainLoop();
+    return 0;
+}
